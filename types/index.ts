@@ -104,6 +104,7 @@ export type CreateCategoryParams = {
 }
 
 // ====== ORDER PARAMS
+
 export type CheckoutOrderParams = {
   eventTitle: string
   eventId: string
@@ -145,5 +146,5 @@ export type RemoveUrlQueryParams = {
 
 export type SearchParamProps = {
   params: { id: string }
-  searchParams: { [key: string]: string | string[] | undefined }
+  searchParams: { [key: string]: string | string[]| undefined }
 }

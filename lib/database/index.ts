@@ -13,8 +13,7 @@ export const connectToDatabase = async () => {
     dbName: 'Evendo',
     bufferCommands: false,
   })
-
+  
   cached.conn = await cached.promise;
-
   return cached.conn;
 }

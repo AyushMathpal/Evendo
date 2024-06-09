@@ -1,4 +1,4 @@
-import { Schema, model, models, Document } from 'mongoose'
+import mongoose,{ Schema, model, models, Document } from 'mongoose'
 
 export interface IOrder extends Document {
   createdAt: Date
@@ -13,6 +13,9 @@ export interface IOrder extends Document {
     firstName: string
     lastName: string
   }
+  qrCode:string
+  isUsed:boolean
+  
 }
 
 export type IOrderItem = {
@@ -22,6 +25,8 @@ export type IOrderItem = {
   eventTitle: string
   eventId: string
   buyer: string
+  qrCode:string
+  isUsed:boolean
 }
 
 const OrderSchema = new Schema({
@@ -45,8 +50,14 @@ const OrderSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User',
   },
+  qrCode:{
+    type:String,
+  },
+  isUsed:{
+    type:Boolean,
+    required:true
+  }
 })
-
 const Order = models.Order || model('Order', OrderSchema)
 
 export default Order

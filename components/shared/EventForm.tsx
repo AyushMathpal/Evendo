@@ -49,6 +49,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
   })
  
   async function onSubmit(values: z.infer<typeof eventFormSchema>) {
+    
     let uploadedImageUrl = values.imageUrl;
 
     if(files.length > 0) {
@@ -123,7 +124,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
             render={({ field }) => (
               <FormItem className="w-full">
                 <FormControl>
-                  <Dropdown onChangeHandler={field.onChange} value={field.value} />
+                  <Dropdown onChangeHandler={field.onChange} value={field.value}/>
                 </FormControl>
                 <FormMessage />
               </FormItem>

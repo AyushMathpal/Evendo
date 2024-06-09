@@ -52,6 +52,8 @@ export const createOrder = async (order: CreateOrderParams) => {
       ...order,
       event: order.eventId,
       buyer: order.buyerId,
+      isUsed:false,
+      qrCode:""
     });
 
     return JSON.parse(JSON.stringify(newOrder));
